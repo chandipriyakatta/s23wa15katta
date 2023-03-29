@@ -1,14 +1,40 @@
 var express = require('express');
+
 var router = express.Router();
-var x = Math.random();
-
-var val1="Math.cos(x) of value "+ x + " is "+ Math.cos(x) 
-var val2="Math.asin(x) of value "+ x +" is "+ Math.asin(x)
-var val3= "Math.asinh(x) of value "+ x + " is "+ Math.asinh(x)
-
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('computation', { title:'Supreeth  ',value1: val1, value2:val2, value3:val3 });
-});
 
+let x;
+let y;
+
+router.get('/', function(req, res, next) {
+
+if(req.query.x ==undefined ) {
+
+    x=Math.floor(Math.random()*10);
+
+    y=Math.fround(Math.random());
+
+    let y1=Math.cos(x,y);
+
+    let y2=Math.asin(y);
+
+    let y3=Math.Math.asinh(x);
+
+    res.send('Math.cos() applied to '+x+' and '+y+' is ' +y1+"<br>" +'Math.asin() applied to '+y+' is '+y2+"<br>"+'Math.asinh() applied to '+x+' is'+y3);
+    }
+
+else{
+
+    x = req.query.x;
+
+    let y1=Math.cos(x,x);
+
+    let y2=Math.asin(x);
+
+    let y3=Math.asinh(x);
+    res.send('Math.cos() applied to '+x+' and '+y+' is ' +y1+"<br>" +'Math.asin() applied to '+y+' is '+y2+"<br>"+'Math.asinh() applied to '+x+' is'+y3);
+
+        }
+
+    });
 module.exports = router;
