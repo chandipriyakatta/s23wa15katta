@@ -18,7 +18,7 @@ if(req.query.x ==undefined ) {
 
     let y2=Math.asin(y);
 
-    let y3=Math.Math.asinh(x);
+    let y3=Math.asinh(x);
 
     res.send('Math.cos() applied to '+x+' and '+y+' is ' +y1+"<br>" +'Math.asin() applied to '+y+' is '+y2+"<br>"+'Math.asinh() applied to '+x+' is'+y3);
     }
